@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>引用辞書</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link id="custom-style" rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+<body>
+  
+
+  <header>
+    <h1>QuotDict - 引用辞書</h1>
+    <div class="search-bar">
+      <form method="GET" action="/">
+        <input type="text" name="q" placeholder="検索ワードを入力..." />
+      </form>
+    </div>
+	<nav>
+	  {% for language in languages %}
+	    <a href="/?lang={{ language }}"
+	       class="nav-item {% if current_lang == language %}active{% endif %}">
+	      {{ language|capitalize }}
+	    </a>
+	  {% endfor %}
+	</nav>
+	<button id="theme-toggle" class="theme-toggle">☽</button>
+  </header>
+
+  <main class="content-block">
+    {% if not current_lang %}
+      <!-- トップページ用：全ジャンルの代表的な引用を並べる -->
+      <h2>言語別のコード引用一覧</h2>
+      {% for language in languages %}
+        <div class="quote-item">
+          <div class="label">{{ language|capitalize }}</div>
+          <pre><code>例：{{ sample_quotes[language] }}</code></pre>
+          <a href="/?lang={{ language }}">→ {{ language|capitalize }} をもっと見る</a>
+        </div>
+      {% endfor %}
+    {% else %}
+	<!-- 言語指定時：その言語の引用だけ表示 -->
+	{% if quotes %}
+	  {% for quote in quotes %}
+	    <div class="quote-item">
+	      <div class="quote-header">
+	        <span class="lang-label">{{ quote.language|capitalize }}</span>
+	        <span class="tag-list">{{ quote.tags | join(", ") }}</span>
+	      </div>
+
+	      <div class="code-block">
+	        <pre><code class="language-{{ quote.language }}">{{ quote.text }}</code></pre>
+	      </div>
+
+	      <p><strong>カテゴリー:</strong> {{ quote.author }}</p>
+
+	      {% if quote.note %}
+	        <p><strong>メモ:</strong> {{ quote.note }}</p>
+	      {% endif %}
+	    </div>
+	  {% endfor %}
+	{% else %}
+	  <p>該当する引用はありません。</p>
+	{% endif %}
+	<p><a href="/">← 一覧に戻る</a></p>
+
+	<h2>追加</h2>
+	<form action="/add" method="post">
+	  <div class="input-bar">
+	    <input type="text" name="text" placeholder="引用文" />
+	  </div>
+	  <div class="input-bar">
+	    <input type="text" name="author" placeholder="カテゴリー" />
+	  </div>
+	  <div class="input-bar">
+	    <input type="text" name="tags" placeholder="タグ（カンマ区切り）" />
+	  </div>
+	  <div class="input-bar">
+	    <input type="text" name="note" placeholder="メモ" />
+	  </div>
+	  <label>
+	    <input type="checkbox" name="favorite"> お気に入り登録
+	  </label><br><br>
+	  <button type="submit" class="nav-item">追加</button>
+	</form>
+	{% endif %}
+  </main>
+
+  <footer>
+    © 2025 NO.38 QuotDict - All rights reserved.
+  </footer>
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const root = document.body;
+
+    if (localStorage.getItem('theme') === 'light') {
+      root.classList.add('light-mode');
+      toggleBtn.textContent = '☼';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      root.classList.toggle('light-mode');
+      const isLight = root.classList.contains('light-mode');
+      toggleBtn.textContent = isLight ? '☼' : '☽';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+
+  <script src="/static/theme-toggle.js"></script>
+</body>
+</html>
