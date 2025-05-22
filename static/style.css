@@ -112,7 +112,7 @@ body.light-mode .content-block {
 
 /* ===== 引用ブロック ===== */
 .quote-item {
-  margin-bottom: 2rem;
+  margin-bottom: none;
   padding: 0.5rem 0;
   border-bottom: 1px dashed #444;
   background-color: transparent;
@@ -131,43 +131,47 @@ body.light-mode .quote-item {
 .quote-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.3rem;
-  font-size: 0.85rem;
-  color: #bbb;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
 }
 
-.lang-label {
-  background-color: #444;
-  color: #fff;
-  padding: 0.2em 0.6em;
-  border-radius: 4px;
+.quote-meta {
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
   font-weight: bold;
-  font-size: 0.75rem;
-}
-
-.tag-list {
-  font-style: italic;
   color: #888;
 }
 
 /* ===== コードブロック ===== */
-.code-block pre {
-  margin-top: 0.2rem;
-  padding: 1rem;
+.code-block pre,
+.quote-result pre {
+  max-height: 300px;
+  overflow: auto;
   border-radius: 6px;
-  overflow-x: auto;
+  padding: 1rem;
   background: #0d1117;
   color: #c9d1d9;
   font-family: 'Share Tech Mono', monospace;
+  white-space: pre;
 }
-body.light-mode .code-block pre {
-  background: #f6f3ec; /* 焦げた白・紙質感 */
+
+.quote-result pre code {
+  background: #282c34; /* atom-one-dark 背景 */
+  color: #abb2bf;       /* テキスト色 */
+  padding: 1em;
+  border-radius: 8px;
+  display: block;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+body.light-mode .code-block pre,
+body.light-mode .quote-result pre {
+  background: #f6f3ec;
   color: #3a3a3a;
-  border-radius: 6px;
-  padding: 1rem;
-  font-family: 'Share Tech Mono', monospace;
   box-shadow: inset 0 0 6px rgba(120, 100, 70, 0.2);
-  border: 1px solid rgba(200, 180, 140, 0.3); /* 薄焼けた縁 */
+  border: 1px solid rgba(200, 180, 140, 0.3);
   background-image:
     url('/static/paper-fibers.png'),
     repeating-linear-gradient(to bottom, transparent, transparent 28px, rgba(0,0,0,0.02) 29px);
@@ -176,7 +180,7 @@ body.light-mode .code-block pre {
   text-shadow: 0 0 1px rgba(0,0,0,0.05);
 }
 
-
+/* light-mode用ハイライトキーワード色 */
 body.light-mode .code-block pre code .hljs-keyword {
   color: #b294bb;
 }
@@ -188,24 +192,48 @@ body.light-mode .code-block pre code .hljs-comment {
   font-style: italic;
 }
 
+/* 引用内のコードは背景なし */
 .quote-item pre code {
   color: inherit;
   background: none;
 }
+
+/* デフォルト：ダークモード（クラスなし） */
+.divider {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  color: #666;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1.0em;
+}
+
+.divider::before {
+  content: "✧　✧　✧"; /* ダークモード用 */
+}
+
+body.light-mode .divider::before {
+  content: "❖　❖　❖";
+  font-size: 1.0rem;
+  color: #999;
+}
+
 /* ===== 検索バー・入力バー ===== */
-.search-bar {
+.search-bar,
+.input-bar {
   display: flex;
-  justify-content: center;
   margin: 1rem 0;
 }
 .input-bar {
-  display: flex;
-  justify-content: flex-start; /* ← 左寄せに変更 */
-  margin: 1rem 0;
+  justify-content: flex-start;
+}
+.search-bar {
+  justify-content: center;
 }
 
 .search-bar input,
-.input-bar input {
+.input-bar input,
+.input-bar select {
   padding: 0.8rem;
   background: #222;
   border: 1px solid #666;
@@ -214,7 +242,8 @@ body.light-mode .code-block pre code .hljs-comment {
   width: 100%;
 }
 body.light-mode .search-bar input,
-body.light-mode .input-bar input {
+body.light-mode .input-bar input,
+body.light-mode .input-bar select {
   background: #fffef9;
   border: 1px solid #ccc;
   color: #333;
@@ -299,9 +328,52 @@ body.light-mode footer {
   font-family: serif;
 }
 
-/* ===== フィルター表示切り替え対応 ===== */
-body.showing-language main.content-block > h2:first-of-type,
-body.showing-language main.content-block > .quote-item,
-body.showing-language main.content-block > a[href*="もっと見る"] {
-  display: none;
+/* ===== 実行結果・解説エリア ===== */
+.quote-result {
+  margin-top: 0.5rem;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid #888;
+  color: #ddd;
+  font-family: 'Share Tech Mono', monospace;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+body.light-mode .quote-result {
+  background: #f7f4ec;
+  color: #333;
+  border-left: 4px solid #bbb;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  font-family: 'Zilla Slab', serif;
+}
+
+/* ===== ラベル・タグ ===== */
+.label-tag {
+  background: #444;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  margin-right: 0.4em;
+  font-size: 0.85rem;
+  color: #eee;
+  user-select: none;
+}
+body.light-mode .label-tag {
+  background: #ddd;
+  color: #444;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 600px) {
+  main.content-block {
+    margin: 1rem 1rem;
+    padding: 0.8rem;
+  }
+  .quote-meta-left, .quote-meta-right {
+    flex-basis: 100%;
+    text-align: left;
+  }
+  .nav-item {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
 }

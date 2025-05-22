@@ -2,754 +2,558 @@
   {
     "text": "# これはコメントです",
     "author": "Python 基本",
-    "tags": [
-      "python",
-      "コメント",
-      "初心者"
-    ],
+    "tags": ["python", "コメント", "初心者"],
     "note": "コメントはコードの説明を書くために使います。",
     "favorite": true,
-    "language": "python"
+    "language": "python",
+    "result": "コードに説明を加えることができます。実行には影響しません。"
   },
   {
     "text": "x = 5",
     "author": "Python 変数",
-    "tags": [
-      "python",
-      "変数",
-      "初心者"
-    ],
+    "tags": ["python", "変数", "初心者"],
     "note": "変数 x に 5 を代入しています。",
     "favorite": false,
-    "language": "python"
+    "language": "python",
+    "result": "変数xに整数5が代入されます。xを使って後で計算などができます。"
   },
   {
     "text": "if x > 0:\n    print(\"正の数です\")",
     "author": "Python 条件分岐",
-    "tags": [
-      "python",
-      "if文",
-      "初心者"
-    ],
+    "tags": ["python", "if文", "初心者"],
     "note": "x が正の数のときだけメッセージを表示します。",
     "favorite": true,
-    "language": "python"
+    "language": "python",
+    "result": "xが0より大きいときに「正の数です」と出力されます。"
   },
   {
     "text": "for i in range(3):\n    print(i)",
     "author": "Python ループ",
-    "tags": [
-      "python",
-      "for文",
-      "初心者"
-    ],
+    "tags": ["python", "for文", "初心者"],
     "note": "0〜2までの数字を順番に出力します。",
     "favorite": false,
-    "language": "python"
+    "language": "python",
+    "result": "0\n1\n2\nと1行ずつ出力されます。"
   },
   {
     "text": "def greet(name):\n    print(f\"こんにちは、{name}さん\")",
     "author": "Python 関数",
-    "tags": [
-      "python",
-      "関数",
-      "初心者"
-    ],
+    "tags": ["python", "関数", "初心者"],
     "note": "引数 name を使ってあいさつします。",
     "favorite": false,
-    "language": "python"
+    "language": "python",
+    "result": "greet(\"太郎\") とすると「こんにちは、太郎さん」と表示されます。"
   },
   {
-    "text": "x, y = 10, 20",
-    "author": "Python 複数代入",
-    "tags": ["python", "変数", "初心者"],
-    "note": "複数の変数に同時に値を代入できます。",
-    "favorite": false,
-    "language": "python"
-  },
-  {
-    "text": "my_list = [1, 2, 3]",
-    "author": "Python リスト",
-    "tags": ["python", "リスト", "初心者"],
-    "note": "複数の値をまとめて管理できるデータ構造です。",
-    "favorite": false,
-    "language": "python"
-  },
-  {
-    "text": "try:\n    1 / 0\nexcept ZeroDivisionError:\n    print(\"0では割れません\")",
-    "author": "Python 例外処理",
-    "tags": ["python", "エラー", "例外", "初心者"],
-    "note": "0で割ろうとしたときのエラーを処理しています。",
+    "text": "<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>タイトル</title>\n</head>\n<body>\n  <!-- 本文ここに書く -->\n</body>\n</html>",
+    "author": "HTML 基本構造",
+    "tags": ["html", "テンプレート", "初心者"],
+    "note": "HTMLの基本構造。最初に必ず書く。",
     "favorite": true,
-    "language": "python"
+    "language": "html",
+    "result": "HTML文書の基本構造です。ブラウザが正しく解釈するために必須です。"
   },
   {
-    "text": "squares = [x**2 for x in range(5)]",
-    "author": "Python リスト内包表記",
-    "tags": ["python", "中級", "内包表記", "for"],
-    "note": "0〜4までの平方数のリストを生成します。",
+    "text": "<h1>見出し</h1>\n<p>これは段落です。</p>",
+    "author": "HTML 見出しと段落",
+    "tags": ["html", "見出し", "段落"],
+    "note": "<h1>〜<h6> で見出し、<p> で文章のまとまりを書きます。",
     "favorite": false,
-    "language": "python"
+    "language": "html",
+    "result": "「見出し」が大きな文字で、「これは段落です。」が普通の段落として表示されます。"
   },
   {
-    "text": "with open('file.txt', 'r', encoding='utf-8') as f:\n    data = f.read()",
-    "author": "Python ファイル読み込み",
-    "tags": ["python", "ファイル操作", "中級"],
-    "note": "`with`を使うことでファイルを安全に開閉できます。",
+    "text": "<strong>重要</strong>な情報です。",
+    "author": "HTML 強調表示",
+    "tags": ["html", "strong", "テキスト"],
+    "note": "<strong> で重要なテキストを強調（太字）します。",
     "favorite": false,
-    "language": "python"
+    "language": "html",
+    "result": "「重要」が太字になり、目立つようになります。"
   },
   {
-    "text": "@decorator\ndef func():\n    pass",
-    "author": "Python デコレータ",
-    "tags": ["python", "中級", "デコレータ"],
-    "note": "関数に機能を追加するための構文です。",
+    "text": "<em>注目</em>してください。",
+    "author": "HTML イタリック",
+    "tags": ["html", "em", "テキスト", "強調"],
+    "note": "<em> で重要性を示すイタリック表示。",
     "favorite": false,
-    "language": "python"
+    "language": "html",
+    "result": "「注目」が斜体で表示され、重要性が示されます。"
   },
   {
-    "text": "d = {'a': 1, 'b': 2}",
-    "author": "Python 辞書",
-    "tags": ["python", "辞書", "初心者"],
-    "note": "キーと値のペアを格納するデータ構造です。",
+    "text": "<a href=\"https://example.com\">リンクはこちら</a>",
+    "author": "HTML リンク",
+    "tags": ["html", "リンク", "aタグ"],
+    "note": "外部や内部ページへのリンクを作成。",
     "favorite": false,
-    "language": "python"
+    "language": "html",
+    "result": "「リンクはこちら」をクリックすると example.com に移動します。"
   },
   {
-    "text": "lambda x: x * 2",
-    "author": "Python ラムダ式",
-    "tags": ["python", "中級", "関数", "lambda"],
-    "note": "無名関数（その場で定義できる関数）を作成します。",
+    "text": "<img src=\"cat.jpg\" alt=\"かわいい猫\">",
+    "author": "HTML 画像",
+    "tags": ["html", "画像", "img"],
+    "note": "画像を表示するときに使う。alt属性は説明文。",
     "favorite": false,
-    "language": "python"
+    "language": "html",
+    "result": "画像ファイル cat.jpg が表示され、表示できない場合は「かわいい猫」と表示されます。"
   },
   {
-    "text": "import math\nprint(math.pi)",
-    "author": "Python 標準ライブラリ",
-    "tags": ["python", "標準ライブラリ", "import"],
-    "note": "mathモジュールを使って円周率を表示します。",
+    "text": "<ul>\n  <li>りんご</li>\n  <li>ばなな</li>\n</ul>",
+    "author": "HTML リスト",
+    "tags": ["html", "リスト", "ul", "li"],
+    "note": "順番のないリストは<ul>、中の項目は<li>。",
     "favorite": false,
-    "language": "python"
+    "language": "html",
+    "result": "・りんご\n・ばなな のような箇条書きリストが表示されます。"
   },
   {
-    "text": "name = input(\"名前を入力してください: \")",
-    "author": "Python 入力",
-    "tags": ["python", "input", "初心者"],
-    "note": "ユーザーからの入力を取得します。",
+    "text": "<ol>\n  <li>ステップ1</li>\n  <li>ステップ2</li>\n</ol>",
+    "author": "HTML 順序付きリスト",
+    "tags": ["html", "リスト", "ol", "li"],
+    "note": "番号付きリストは<ol>タグを使用します。",
     "favorite": false,
-    "language": "python"
+    "language": "html",
+    "result": "1. ステップ1\n2. ステップ2 のような順序付きリストが表示されます。"
   },
   {
-  "text": "<!DOCTYPE html>\n<html lang=\"ja\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>タイトル</title>\n</head>\n<body>\n  <!-- 本文ここに書く -->\n</body>\n</html>",
-  "author": "HTML 基本構造",
-  "tags": ["html", "テンプレート", "初心者"],
-  "note": "HTMLの基本構造。最初に必ず書く。",
-  "favorite": true,
-  "language": "html"
-},
-{
-  "text": "<h1>見出し</h1>\n<p>これは段落です。</p>",
-  "author": "HTML 見出しと段落",
-  "tags": ["html", "見出し", "段落"],
-  "note": "<h1>〜<h6> で見出し、<p> で文章のまとまりを書きます。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<strong>重要</strong>な情報です。",
-  "author": "HTML 強調表示",
-  "tags": ["html", "strong", "テキスト"],
-  "note": "<strong> で重要なテキストを強調（太字）します。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<em>注目</em>してください。",
-  "author": "HTML イタリック",
-  "tags": ["html", "em", "テキスト", "強調"],
-  "note": "<em> で重要性を示すイタリック表示。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<a href=\"https://example.com\">リンクはこちら</a>",
-  "author": "HTML リンク",
-  "tags": ["html", "リンク", "aタグ"],
-  "note": "外部や内部ページへのリンクを作成。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<img src=\"cat.jpg\" alt=\"かわいい猫\">",
-  "author": "HTML 画像",
-  "tags": ["html", "画像", "img"],
-  "note": "画像を表示するときに使う。alt属性は説明文。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<ul>\n  <li>りんご</li>\n  <li>ばなな</li>\n</ul>",
-  "author": "HTML リスト",
-  "tags": ["html", "リスト", "ul", "li"],
-  "note": "順番のないリストは<ul>、中の項目は<li>。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<ol>\n  <li>ステップ1</li>\n  <li>ステップ2</li>\n</ol>",
-  "author": "HTML 順序付きリスト",
-  "tags": ["html", "リスト", "ol", "li"],
-  "note": "番号付きリストは<ol>タグを使用します。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<form action=\"/submit\" method=\"post\">\n  <input type=\"text\" name=\"username\">\n  <input type=\"submit\" value=\"送信\">\n</form>",
-  "author": "HTML フォーム基本",
-  "tags": ["html", "フォーム", "input", "form"],
-  "note": "ユーザーからの入力を受け取るフォームの基本形。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<label for=\"email\">メール:</label>\n<input type=\"email\" id=\"email\" name=\"email\">",
-  "author": "HTML 入力ラベル",
-  "tags": ["html", "フォーム", "label", "input"],
-  "note": "ラベルと入力欄を対応させるには for と id を一致させる。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<p style=\"color:red;\">赤いテキスト</p>",
-  "author": "HTML インラインスタイル",
-  "tags": ["html", "style", "CSS", "色"],
-  "note": "style属性で直接CSSを書く方法。通常は外部CSS推奨。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<table>\n  <tr><th>名前</th><th>年齢</th></tr>\n  <tr><td>田中</td><td>30</td></tr>\n</table>",
-  "author": "HTML テーブル基本",
-  "tags": ["html", "table", "表", "td", "th"],
-  "note": "テーブル構造の基本。th は見出し、td はデータ。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<header>\n  <h1>サイトのタイトル</h1>\n</header>",
-  "author": "HTML5 header要素",
-  "tags": ["html", "HTML5", "セマンティクス", "header"],
-  "note": "header はセクションやページの見出し部分に使います。",
-  "favorite": false,
-  "language": "html"
-},
-{
-  "text": "<article>\n  <h2>記事タイトル</h2>\n  <p>内容本文</p>\n</article>",
-  "author": "HTML5 article要素",
-  "tags": ["html", "HTML5", "セマンティクス", "article"],
-  "note": "独立したコンテンツを表す article 要素。",
-  "favorite": false,
-  "language": "html"
-},
+    "text": "<form action=\"/submit\" method=\"post\">\n  <input type=\"text\" name=\"username\">\n  <input type=\"submit\" value=\"送信\">\n</form>",
+    "author": "HTML フォーム基本",
+    "tags": ["html", "フォーム", "input", "form"],
+    "note": "ユーザーからの入力を受け取るフォームの基本形。",
+    "favorite": false,
+    "language": "html",
+    "result": "テキスト入力欄と送信ボタンが表示され、送信で /submit にPOSTされます。"
+  },
   {
-  "text": "body {\n  background-color: #f0f0f0;\n  color: #333;\n}",
-  "author": "CSS 背景色と文字色",
-  "tags": ["css", "スタイル", "初心者"],
-  "note": "背景と文字色を指定する基本スタイル。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": "h1 {\n  font-size: 2em;\n  color: navy;\n}",
-  "author": "CSS 見出しスタイル",
-  "tags": ["css", "h1", "文字サイズ"],
-  "note": "h1の文字を大きくして色を変える。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": "p {\n  line-height: 1.6;\n  margin-bottom: 1em;\n}",
-  "author": "CSS 段落調整",
-  "tags": ["css", "段落", "余白", "line-height"],
-  "note": "段落の行間と下の余白を調整します。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": "a:hover {\n  color: red;\n  text-decoration: underline;\n}",
-  "author": "CSS ホバー効果",
-  "tags": ["css", "リンク", "hover"],
-  "note": "リンクにマウスを乗せたときのスタイル。",
-  "favorite": true,
-  "language": "css"
-},
-{
-  "text": ".container {\n  width: 80%;\n  margin: 0 auto;\n}",
-  "author": "CSS コンテナ中央寄せ",
-  "tags": ["css", "レイアウト", "中央寄せ"],
-  "note": "ページの中央にコンテンツを配置します。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": "#main {\n  padding: 20px;\n  background-color: white;\n}",
-  "author": "CSS IDセレクタ",
-  "tags": ["css", "ID", "セレクタ"],
-  "note": "#でIDを指定し、スタイルを適用します。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": ".box {\n  border: 1px solid #ccc;\n  padding: 10px;\n}",
-  "author": "CSS ボックス装飾",
-  "tags": ["css", "ボックス", "装飾"],
-  "note": "ボーダーとパディングでボックス風に装飾。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": "@media screen and (max-width: 600px) {\n  body {\n    font-size: 14px;\n  }\n}",
-  "author": "CSS メディアクエリ",
-  "tags": ["css", "レスポンシブ", "メディアクエリ"],
-  "note": "画面幅が600px以下のときにフォントサイズを調整。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": ".hidden {\n  display: none;\n}",
-  "author": "CSS 非表示",
-  "tags": ["css", "非表示", "display"],
-  "note": "要素を画面から非表示にする。",
-  "favorite": false,
-  "language": "css"
-},
-{
-  "text": ".highlight {\n  background-color: yellow;\n}",
-  "author": "CSS 背景ハイライト",
-  "tags": ["css", "背景", "ハイライト"],
-  "note": "注目させたい部分に背景色を追加。",
-  "favorite": false,
-  "language": "css"
-},
+    "text": "<label for=\"email\">メール:</label>\n<input type=\"email\" id=\"email\" name=\"email\">",
+    "author": "HTML 入力ラベル",
+    "tags": ["html", "フォーム", "label", "input"],
+    "note": "ラベルと入力欄を対応させるには for と id を一致させる。",
+    "favorite": false,
+    "language": "html",
+    "result": "「メール:」のラベル付きでメール入力欄が表示されます。"
+  },
+  {
+    "text": "<p style=\"color:red;\">赤いテキスト</p>",
+    "author": "HTML インラインスタイル",
+    "tags": ["html", "style", "CSS", "色"],
+    "note": "style属性で直接CSSを書く方法。通常は外部CSS推奨。",
+    "favorite": false,
+    "language": "html",
+    "result": "「赤いテキスト」という文章が赤色で表示されます。"
+  },
+  {
+    "text": "<table>\n  <tr><th>名前</th><th>年齢</th></tr>\n  <tr><td>田中</td><td>30</td></tr>\n</table>",
+    "author": "HTML テーブル基本",
+    "tags": ["html", "table", "表", "td", "th"],
+    "note": "テーブル構造の基本。th は見出し、td はデータ。",
+    "favorite": false,
+    "language": "html",
+    "result": "名前と年齢の表が表示されます。「田中 30」のような行が表示されます。"
+  },
+  {
+    "text": "<header>\n  <h1>サイトのタイトル</h1>\n</header>",
+    "author": "HTML5 header要素",
+    "tags": ["html", "HTML5", "セマンティクス", "header"],
+    "note": "header はセクションやページの見出し部分に使います。",
+    "favorite": false,
+    "language": "html",
+    "result": "ページや記事の先頭部分として「サイトのタイトル」が見出しで表示されます。"
+  },
+  {
+    "text": "<article>\n  <h2>記事タイトル</h2>\n  <p>内容本文</p>\n</article>",
+    "author": "HTML5 article要素",
+    "tags": ["html", "HTML5", "セマンティクス", "article"],
+    "note": "独立したコンテンツを表す article 要素。",
+    "favorite": false,
+    "language": "html",
+    "result": "独立した記事のように、「記事タイトル」とその本文がセクションとして表示されます。"
+  },
+  {
+    "text": "body {\n  background-color: #f0f0f0;\n  color: #333;\n}",
+    "author": "CSS 背景色と文字色",
+    "tags": ["css", "スタイル", "初心者"],
+    "note": "背景と文字色を指定する基本スタイル。",
+    "favorite": false,
+    "language": "css",
+    "result": "<body style=\"background-color: #f0f0f0; color: #333;\">本文テキスト</body>"
+  },
+  {
+    "text": "h1 {\n  font-size: 2em;\n  color: navy;\n}",
+    "author": "CSS 見出しスタイル",
+    "tags": ["css", "h1", "文字サイズ"],
+    "note": "h1の文字を大きくして色を変える。",
+    "favorite": false,
+    "language": "css",
+    "result": "<h1 style=\"font-size: 2em; color: navy;\">見出し</h1>"
+  },
+  {
+    "text": "p {\n  line-height: 1.6;\n  margin-bottom: 1em;\n}",
+    "author": "CSS 段落調整",
+    "tags": ["css", "段落", "余白", "line-height"],
+    "note": "段落の行間と下の余白を調整します。",
+    "favorite": false,
+    "language": "css",
+    "result": "<p style=\"line-height: 1.6; margin-bottom: 1em;\">段落テキスト</p>"
+  },
+  {
+    "text": "a:hover {\n  color: red;\n  text-decoration: underline;\n}",
+    "author": "CSS ホバー効果",
+    "tags": ["css", "リンク", "hover"],
+    "note": "リンクにマウスを乗せたときのスタイル。",
+    "favorite": true,
+    "language": "css",
+    "result": "<a href=\"#\" style=\"color: red; text-decoration: underline;\">リンク（ホバー時）</a>"
+  },
+  {
+    "text": ".container {\n  width: 80%;\n  margin: 0 auto;\n}",
+    "author": "CSS コンテナ中央寄せ",
+    "tags": ["css", "レイアウト", "中央寄せ"],
+    "note": "ページの中央にコンテンツを配置します。",
+    "favorite": false,
+    "language": "css",
+    "result": "<div class=\"container\" style=\"width: 80%; margin: 0 auto;\">中央寄せコンテンツ</div>"
+  },
+  {
+    "text": "#main {\n  padding: 20px;\n  background-color: white;\n}",
+    "author": "CSS IDセレクタ",
+    "tags": ["css", "ID", "セレクタ"],
+    "note": "#でIDを指定し、スタイルを適用します。",
+    "favorite": false,
+    "language": "css",
+    "result": "<div id=\"main\" style=\"padding: 20px; background-color: white;\">メインコンテンツ</div>"
+  },
+  {
+    "text": ".box {\n  border: 1px solid #ccc;\n  padding: 10px;\n}",
+    "author": "CSS ボックス装飾",
+    "tags": ["css", "ボックス", "装飾"],
+    "note": "ボーダーとパディングでボックス風に装飾。",
+    "favorite": false,
+    "language": "css",
+    "result": "<div class=\"box\" style=\"border: 1px solid #ccc; padding: 10px;\">ボックス</div>"
+  },
+  {
+    "text": "@media screen and (max-width: 600px) {\n  body {\n    font-size: 14px;\n  }\n}",
+    "author": "CSS メディアクエリ",
+    "tags": ["css", "レスポンシブ", "メディアクエリ"],
+    "note": "画面幅が600px以下のときにフォントサイズを調整。",
+    "favorite": false,
+    "language": "css",
+    "result": "@media 適用時：<body style=\"font-size: 14px;\">小さめ文字</body>"
+  },
+  {
+    "text": ".hidden {\n  display: none;\n}",
+    "author": "CSS 非表示",
+    "tags": ["css", "非表示", "display"],
+    "note": "要素を画面から非表示にする。",
+    "favorite": false,
+    "language": "css",
+    "result": "<div class=\"hidden\" style=\"display: none;\">非表示</div>（画面には出ない）"
+  },
+  {
+    "text": ".highlight {\n  background-color: yellow;\n}",
+    "author": "CSS 背景ハイライト",
+    "tags": ["css", "背景", "ハイライト"],
+    "note": "注目させたい部分に背景色を追加。",
+    "favorite": false,
+    "language": "css",
+    "result": "<span class=\"highlight\" style=\"background-color: yellow;\">ハイライト部分</span>"
+  },
   {
     "text": "console.log(\"こんにちは、JavaScript！\");",
     "author": "JavaScript 基本出力",
-    "tags": [
-      "javascript",
-      "console",
-      "出力",
-      "初心者"
-    ],
+    "tags": ["javascript", "console", "出力", "初心者"],
     "note": "ブラウザの開発者ツールのコンソールに出力されます。",
     "favorite": true,
-    "language": "javascript"
+    "language": "javascript",
+    "result": "ブラウザのコンソールに「こんにちは、JavaScript！」と表示されます。"
   },
   {
     "text": "let name = \"たろう\";\nalert(\"こんにちは、\" + name + \"さん\");",
     "author": "JavaScript 変数とアラート",
-    "tags": [
-      "javascript",
-      "alert",
-      "変数",
-      "初心者"
-    ],
+    "tags": ["javascript", "alert", "変数", "初心者"],
     "note": "変数の値を使ってアラートを表示。",
     "favorite": false,
-    "language": "javascript"
+    "language": "javascript",
+    "result": "ブラウザで「こんにちは、たろうさん」というアラートが表示されます。"
   },
   {
     "text": "function greet(name) {\n  return \"こんにちは、\" + name + \"！\";\n}",
     "author": "JavaScript 関数",
-    "tags": [
-      "javascript",
-      "関数",
-      "初心者"
-    ],
+    "tags": ["javascript", "関数", "初心者"],
     "note": "引数を使ってメッセージを返す関数。",
     "favorite": false,
-    "language": "javascript"
+    "language": "javascript",
+    "result": "greet(\"たろう\") を呼ぶと「こんにちは、たろう！」という文字列が返されます。"
   },
   {
     "text": "let count = 0;\nwhile (count < 3) {\n  console.log(count);\n  count++;\n}",
     "author": "JavaScript whileループ",
-    "tags": [
-      "javascript",
-      "ループ",
-      "while",
-      "初心者"
-    ],
+    "tags": ["javascript", "ループ", "while", "初心者"],
     "note": "0から2までの数字を出力。",
     "favorite": false,
-    "language": "javascript"
+    "language": "javascript",
+    "result": "コンソールに0、1、2が順に表示されます。"
   },
   {
     "text": "document.getElementById(\"btn\").addEventListener(\"click\", function() {\n  alert(\"クリックされたよ！\");\n});",
     "author": "JavaScript DOM操作・イベント",
-    "tags": [
-      "javascript",
-      "イベント",
-      "DOM",
-      "初心者"
-    ],
+    "tags": ["javascript", "イベント", "DOM", "初心者"],
     "note": "ボタンがクリックされたときにアラートを表示。",
     "favorite": true,
-    "language": "javascript"
+    "language": "javascript",
+    "result": "HTMLのbtnというIDのボタンがクリックされると、「クリックされたよ！」というアラートが表示されます。"
   },
   {
-  "text": "let x = 10;\nconst y = 20;",
-  "author": "JavaScript 変数宣言",
-  "tags": [
-    "javascript",
-    "変数",
-    "let",
-    "const",
-    "初心者"
-  ],
-  "note": "let は再代入できる変数、const は再代入できない定数。",
-  "favorite": true,
-  "language": "javascript"
-},
-{
-  "text": "if (x > 5) {\n  console.log(\"5より大きい\");\n} else {\n  console.log(\"5以下\");\n}",
-  "author": "JavaScript 条件分岐",
-  "tags": [
-    "javascript",
-    "if文",
-    "条件分岐",
-    "初心者"
-  ],
-  "note": "if文で条件に応じた処理を行う。",
-  "favorite": false,
-  "language": "javascript"
-},
-{
-  "text": "for (let i = 0; i < 3; i++) {\n  console.log(i);\n}",
-  "author": "JavaScript forループ",
-  "tags": [
-    "javascript",
-    "for文",
-    "ループ",
-    "繰り返し"
-  ],
-  "note": "0から2まで繰り返し処理する。",
-  "favorite": false,
-  "language": "javascript"
-},
-{
-  "text": "function greet(name) {\n  return `こんにちは、${name}さん`;\n}",
-  "author": "JavaScript 関数定義",
-  "tags": [
-    "javascript",
-    "関数",
-    "テンプレートリテラル"
-  ],
-  "note": "関数を定義して、名前を使ったメッセージを返す。",
-  "favorite": true,
-  "language": "javascript"
-},
-{
-  "text": "const fruits = [\"りんご\", \"ばなな\", \"みかん\"];\nconsole.log(fruits[1]);",
-  "author": "JavaScript 配列",
-  "tags": [
-    "javascript",
-    "配列",
-    "データ構造"
-  ],
-  "note": "配列の2番目の要素（ばなな）を取り出して表示する。",
-  "favorite": false,
-  "language": "javascript"
-},
-{
-  "text": "const person = {\n  name: \"たろう\",\n  age: 25\n};\nconsole.log(person.name);",
-  "author": "JavaScript オブジェクト",
-  "tags": [
-    "javascript",
-    "オブジェクト",
-    "プロパティ"
-  ],
-  "note": "オブジェクトからプロパティを取り出して表示する。",
-  "favorite": false,
-  "language": "javascript"
-},
-{
-  "text": "document.getElementById(\"myButton\").addEventListener(\"click\", function() {\n  alert(\"クリックされました！\");\n});",
-  "author": "JavaScript イベントリスナー",
-  "tags": [
-    "javascript",
-    "DOM操作",
-    "イベント",
-    "クリック"
-  ],
-  "note": "ボタンがクリックされたときにアラートを表示する。",
-  "favorite": true,
-  "language": "javascript"
-},
+    "text": "let x = 10;\nconst y = 20;",
+    "author": "JavaScript 変数宣言",
+    "tags": ["javascript", "変数", "let", "const", "初心者"],
+    "note": "let は再代入できる変数、const は再代入できない定数。",
+    "favorite": true,
+    "language": "javascript",
+    "result": "変数xは値を変えられます。定数yは一度設定したら値を変えられません。"
+  },
+  {
+    "text": "if (x > 5) {\n  console.log(\"5より大きい\");\n} else {\n  console.log(\"5以下\");\n}",
+    "author": "JavaScript 条件分岐",
+    "tags": ["javascript", "if文", "条件分岐", "初心者"],
+    "note": "if文で条件に応じた処理を行う。",
+    "favorite": false,
+    "language": "javascript",
+    "result": "xが5より大きければ「5より大きい」、そうでなければ「5以下」とコンソールに表示されます。"
+  },
+  {
+    "text": "for (let i = 0; i < 3; i++) {\n  console.log(i);\n}",
+    "author": "JavaScript forループ",
+    "tags": ["javascript", "for文", "ループ", "繰り返し"],
+    "note": "0から2まで繰り返し処理する。",
+    "favorite": false,
+    "language": "javascript",
+    "result": "コンソールに0、1、2が順に表示されます。"
+  },
+  {
+    "text": "function greet(name) {\n  return `こんにちは、${name}さん`;\n}",
+    "author": "JavaScript 関数定義",
+    "tags": ["javascript", "関数", "テンプレートリテラル"],
+    "note": "関数を定義して、名前を使ったメッセージを返す。",
+    "favorite": true,
+    "language": "javascript",
+    "result": "greet(\"たろう\") を呼ぶと「こんにちは、たろうさん」という文字列が返されます。"
+  },
+  {
+    "text": "const fruits = [\"りんご\", \"ばなな\", \"みかん\"];\nconsole.log(fruits[1]);",
+    "author": "JavaScript 配列",
+    "tags": ["javascript", "配列", "データ構造"],
+    "note": "配列の2番目の要素（ばなな）を取り出して表示する。",
+    "favorite": false,
+    "language": "javascript",
+    "result": "コンソールに「ばなな」と表示されます。"
+  },
+  {
+    "text": "const person = {\n  name: \"たろう\",\n  age: 25\n};\nconsole.log(person.name);",
+    "author": "JavaScript オブジェクト",
+    "tags": ["javascript", "オブジェクト", "プロパティ"],
+    "note": "オブジェクトからプロパティを取り出して表示する。",
+    "favorite": false,
+    "language": "javascript",
+    "result": "コンソールに「たろう」と表示されます。"
+  },
+  {
+    "text": "document.getElementById(\"myButton\").addEventListener(\"click\", function() {\n  alert(\"クリックされました！\");\n});",
+    "author": "JavaScript イベントリスナー",
+    "tags": ["javascript", "DOM操作", "イベント", "クリック"],
+    "note": "ボタンがクリックされたときにアラートを表示する。",
+    "favorite": true,
+    "language": "javascript",
+    "result": "myButtonというIDのボタンがクリックされると、「クリックされました！」というアラートが表示されます。"
+  },
   {
     "text": "<?php\necho \"こんにちは、PHP！\";\n?>",
     "author": "PHP 基本出力",
-    "tags": [
-      "php",
-      "出力",
-      "echo",
-      "初心者"
-    ],
+    "tags": ["php", "出力", "echo", "初心者"],
     "note": "`echo` を使って文字を出力。PHPの基本！",
     "favorite": true,
-    "language": "php"
+    "language": "php",
+    "result": "画面に「こんにちは、PHP！」と表示されます。"
   },
   {
     "text": "<?php\n$name = \"たろう\";\necho \"こんにちは、$name さん！\";\n?>",
     "author": "PHP 変数と文字列",
-    "tags": [
-      "php",
-      "変数",
-      "文字列",
-      "初心者"
-    ],
+    "tags": ["php", "変数", "文字列", "初心者"],
     "note": "ダブルクォート内で変数を展開できるのがPHPの特徴！",
     "favorite": false,
-    "language": "php"
+    "language": "php",
+    "result": "画面に「こんにちは、たろうさん！」と表示されます。"
   },
   {
     "text": "<?php\nif ($_SERVER[\"REQUEST_METHOD\"] === \"POST\") {\n  $name = $_POST[\"name\"];\n  echo \"こんにちは、\" . htmlspecialchars($name) . \"さん！\";\n}\n?>",
     "author": "PHP フォーム受け取り",
-    "tags": [
-      "php",
-      "フォーム",
-      "POST",
-      "セキュリティ",
-      "初心者"
-    ],
+    "tags": ["php", "フォーム", "POST", "セキュリティ", "初心者"],
     "note": "`htmlspecialchars()` でXSS対策しよう！",
     "favorite": true,
-    "language": "php"
+    "language": "php",
+    "result": "POSTで送られたnameの値を安全に画面に表示します。XSS攻撃を防ぎます。"
   },
   {
     "text": "<?php\n$colors = [\"赤\", \"青\", \"緑\"];\nforeach ($colors as $color) {\n  echo $color . \"<br>\";\n}\n?>",
     "author": "PHP foreachループ",
-    "tags": [
-      "php",
-      "配列",
-      "ループ",
-      "foreach",
-      "初心者"
-    ],
+    "tags": ["php", "配列", "ループ", "foreach", "初心者"],
     "note": "PHPでよく使うループ構文。HTMLに出力もできるよ！",
     "favorite": false,
-    "language": "php"
+    "language": "php",
+    "result": "「赤」「青」「緑」が改行付きで順に画面に表示されます。"
   },
   {
     "text": "<?php\nfunction greet($name = \"ゲスト\") {\n  return \"こんにちは、\" . $name . \"さん！\";\n}\necho greet();\n?>",
     "author": "PHP 関数とデフォルト引数",
-    "tags": [
-      "php",
-      "関数",
-      "引数",
-      "初心者"
-    ],
+    "tags": ["php", "関数", "引数", "初心者"],
     "note": "引数がない場合でも動くようにデフォルト値を設定！",
     "favorite": false,
-    "language": "php"
+    "language": "php",
+    "result": "引数なしで呼ぶと「こんにちは、ゲストさん！」と表示されます。"
   },
   {
-  "text": "<?php\n// コメントの例\n# これもコメント\n/* 複数行\nのコメント */\n?>",
-  "author": "PHP コメントの書き方",
-  "tags": [
-    "php",
-    "コメント",
-    "初心者"
-  ],
-  "note": "// や # で1行、/* */ で複数行コメントが書けます。",
-  "favorite": false,
-  "language": "php"
-},
-{
-  "text": "<?php\nfor ($i = 0; $i < 3; $i++) {\n  echo $i . \"<br>\";\n}\n?>",
-  "author": "PHP forループ",
-  "tags": [
-    "php",
-    "ループ",
-    "for",
-    "初心者"
-  ],
-  "note": "for文で繰り返し処理ができます。",
-  "favorite": false,
-  "language": "php"
-},
-{
-  "text": "<?php\n$age = 20;\nif ($age >= 18) {\n  echo \"成人です\";\n} else {\n  echo \"未成年です\";\n}\n?>",
-  "author": "PHP 条件分岐 if-else",
-  "tags": [
-    "php",
-    "if文",
-    "条件分岐",
-    "初心者"
-  ],
-  "note": "条件に応じて処理を分ける基本構文。",
-  "favorite": false,
-  "language": "php"
-},
-{
-  "text": "<?php\n$fruits = array(\"りんご\", \"みかん\", \"ぶどう\");\necho $fruits[1];\n?>",
-  "author": "PHP 配列の基本",
-  "tags": [
-    "php",
-    "配列",
-    "array",
-    "初心者"
-  ],
-  "note": "配列の要素は 0 から始まります。",
-  "favorite": false,
-  "language": "php"
-},
-{
-  "text": "<?php\n$person = [\n  \"name\" => \"たろう\",\n  \"age\" => 25\n];\necho $person[\"name\"];\n?>",
-  "author": "PHP 連想配列",
-  "tags": [
-    "php",
-    "連想配列",
-    "初心者"
-  ],
-  "note": "キーでアクセスできる配列。JSONとの連携にも便利！",
-  "favorite": false,
-  "language": "php"
-},
+    "text": "<?php\n// コメントの例\n# これもコメント\n/* 複数行\nのコメント */\n?>",
+    "author": "PHP コメントの書き方",
+    "tags": ["php", "コメント", "初心者"],
+    "note": "// や # で1行、/* */ で複数行コメントが書けます。",
+    "favorite": false,
+    "language": "php",
+    "result": "画面表示はなく、コメントはコードの説明やメモに使います。"
+  },
+  {
+    "text": "<?php\nfor ($i = 0; $i < 3; $i++) {\n  echo $i . \"<br>\";\n}\n?>",
+    "author": "PHP forループ",
+    "tags": ["php", "ループ", "for", "初心者"],
+    "note": "for文で繰り返し処理ができます。",
+    "favorite": false,
+    "language": "php",
+    "result": "0、1、2 が改行付きで順に画面に表示されます。"
+  },
+  {
+    "text": "<?php\n$age = 20;\nif ($age >= 18) {\n  echo \"成人です\";\n} else {\n  echo \"未成年です\";\n}\n?>",
+    "author": "PHP 条件分岐 if-else",
+    "tags": ["php", "if文", "条件分岐", "初心者"],
+    "note": "条件に応じて処理を分ける基本構文。",
+    "favorite": false,
+    "language": "php",
+    "result": "ageが18以上なら「成人です」と表示されます。そうでなければ「未成年です」と表示されます。"
+  },
+  {
+    "text": "<?php\n$fruits = array(\"りんご\", \"みかん\", \"ぶどう\");\necho $fruits[1];\n?>",
+    "author": "PHP 配列の基本",
+    "tags": ["php", "配列", "array", "初心者"],
+    "note": "配列の要素は 0 から始まります。",
+    "favorite": false,
+    "language": "php",
+    "result": "配列の2番目の要素「みかん」が画面に表示されます。"
+  },
+  {
+    "text": "<?php\n$person = [\n  \"name\" => \"たろう\",\n  \"age\" => 25\n];\necho $person[\"name\"];\n?>",
+    "author": "PHP 連想配列",
+    "tags": ["php", "連想配列", "初心者"],
+    "note": "キーでアクセスできる配列。JSONとの連携にも便利！",
+    "favorite": false,
+    "language": "php",
+    "result": "連想配列のnameキーの値「たろう」が画面に表示されます。"
+  },
   {
     "text": "public class Hello {\n  public static void main(String[] args) {\n    System.out.println(\"こんにちは、Java！\");\n  }\n}",
     "author": "Java 基本のHelloWorld",
-    "tags": [
-      "java",
-      "main",
-      "出力",
-      "初心者"
-    ],
+    "tags": ["java", "main", "出力", "初心者"],
     "note": "`main` メソッドが Java プログラムのスタート地点！",
     "favorite": true,
-    "language": "java"
+    "language": "java",
+    "result": "コンソールに「こんにちは、Java！」と表示されます。"
   },
   {
     "text": "int x = 10;\nint y = 20;\nint sum = x + y;\nSystem.out.println(\"合計: \" + sum);",
     "author": "Java 変数と演算",
-    "tags": [
-      "java",
-      "変数",
-      "演算",
-      "初心者"
-    ],
+    "tags": ["java", "変数", "演算", "初心者"],
     "note": "基本的な整数の計算と出力。型指定が必要なのがJava！",
     "favorite": false,
-    "language": "java"
+    "language": "java",
+    "result": "「合計: 30」とコンソールに表示されます。"
   },
   {
     "text": "String name = \"たろう\";\nSystem.out.println(\"こんにちは、\" + name + \"さん\");",
     "author": "Java 文字列と変数",
-    "tags": [
-      "java",
-      "文字列",
-      "変数",
-      "初心者"
-    ],
+    "tags": ["java", "文字列", "変数", "初心者"],
     "note": "Javaは文字列も型で扱うよ！ `String` がキー！",
     "favorite": false,
-    "language": "java"
+    "language": "java",
+    "result": "「こんにちは、たろうさん」とコンソールに表示されます。"
   },
   {
     "text": "for (int i = 0; i < 5; i++) {\n  System.out.println(\"カウント: \" + i);\n}",
     "author": "Java forループ",
-    "tags": [
-      "java",
-      "ループ",
-      "for",
-      "初心者"
-    ],
+    "tags": ["java", "ループ", "for", "初心者"],
     "note": "`for` 文の構文をマスターすると配列処理が楽に！",
     "favorite": false,
-    "language": "java"
+    "language": "java",
+    "result": "0から4まで「カウント: 」付きで1行ずつ表示されます。"
   },
   {
     "text": "public class Greeter {\n  public static String greet(String name) {\n    return \"こんにちは、\" + name + \"さん！\";\n  }\n}",
     "author": "Java メソッド定義",
-    "tags": [
-      "java",
-      "関数",
-      "メソッド",
-      "初心者"
-    ],
+    "tags": ["java", "関数", "メソッド", "初心者"],
     "note": "Javaでは関数のことを「メソッド」って呼ぶよ！",
     "favorite": true,
-    "language": "java"
+    "language": "java",
+    "result": "名前を受け取って挨拶文を返すメソッドが定義されています。"
   },
   {
-  "text": "int age = 18;\nif (age >= 18) {\n  System.out.println(\"成人です\");\n} else {\n  System.out.println(\"未成年です\");\n}",
-  "author": "Java if-else 条件分岐",
-  "tags": [
-    "java",
-    "if",
-    "条件分岐",
-    "初心者"
-  ],
-  "note": "条件によって処理を分ける基本構文。",
-  "favorite": false,
-  "language": "java"
-},
-{
-  "text": "int[] numbers = {1, 2, 3, 4, 5};\nfor (int num : numbers) {\n  System.out.println(num);\n}",
-  "author": "Java 拡張forループ",
-  "tags": [
-    "java",
-    "for",
-    "ループ",
-    "配列",
-    "初心者"
-  ],
-  "note": "配列やコレクションの繰り返しに便利な拡張for文。",
-  "favorite": false,
-  "language": "java"
-},
-{
-  "text": "public class Person {\n  private String name;\n  public Person(String name) {\n    this.name = name;\n  }\n  public String getName() {\n    return name;\n  }\n}",
-  "author": "Java クラスとカプセル化",
-  "tags": [
-    "java",
-    "クラス",
-    "カプセル化",
-    "初心者"
-  ],
-  "note": "クラスの基本とフィールドのカプセル化（private）。",
-  "favorite": true,
-  "language": "java"
-},
-{
-  "text": "try {\n  int result = 10 / 0;\n} catch (ArithmeticException e) {\n  System.out.println(\"ゼロ除算エラーが発生しました\");\n}",
-  "author": "Java 例外処理 try-catch",
-  "tags": [
-    "java",
-    "例外処理",
-    "try-catch",
-    "初心者"
-  ],
-  "note": "例外が起きたらcatchで捕まえて処理を続ける。",
-  "favorite": false,
-  "language": "java"
-},
-{
-  "text": "import java.util.ArrayList;\nArrayList<String> list = new ArrayList<>();\nlist.add(\"りんご\");\nlist.add(\"みかん\");\nfor (String fruit : list) {\n  System.out.println(fruit);\n}",
-  "author": "Java コレクション ArrayList",
-  "tags": [
-    "java",
-    "コレクション",
-    "ArrayList",
-    "初心者"
-  ],
-  "note": "可変長のリストを簡単に使えるクラス。",
-  "favorite": false,
-  "language": "java"
-},
-{
+    "text": "int age = 18;\nif (age >= 18) {\n  System.out.println(\"成人です\");\n} else {\n  System.out.println(\"未成年です\");\n}",
+    "author": "Java if-else 条件分岐",
+    "tags": ["java", "if", "条件分岐", "初心者"],
+    "note": "条件によって処理を分ける基本構文。",
+    "favorite": false,
+    "language": "java",
+    "result": "ageが18以上なら「成人です」と表示され、それ以外は「未成年です」と表示されます。"
+  },
+  {
+    "text": "int[] numbers = {1, 2, 3, 4, 5};\nfor (int num : numbers) {\n  System.out.println(num);\n}",
+    "author": "Java 拡張forループ",
+    "tags": ["java", "for", "ループ", "配列", "初心者"],
+    "note": "配列やコレクションの繰り返しに便利な拡張for文。",
+    "favorite": false,
+    "language": "java",
+    "result": "配列の1から5までの数字が1行ずつコンソールに表示されます。"
+  },
+  {
+    "text": "public class Person {\n  private String name;\n  public Person(String name) {\n    this.name = name;\n  }\n  public String getName() {\n    return name;\n  }\n}",
+    "author": "Java クラスとカプセル化",
+    "tags": ["java", "クラス", "カプセル化", "初心者"],
+    "note": "クラスの基本とフィールドのカプセル化（private）。",
+    "favorite": true,
+    "language": "java",
+    "result": "名前を保持し、外部から安全に取得できるクラスが定義されています。"
+  },
+  {
+    "text": "try {\n  int result = 10 / 0;\n} catch (ArithmeticException e) {\n  System.out.println(\"ゼロ除算エラーが発生しました\");\n}",
+    "author": "Java 例外処理 try-catch",
+    "tags": ["java", "例外処理", "try-catch", "初心者"],
+    "note": "例外が起きたらcatchで捕まえて処理を続ける。",
+    "favorite": false,
+    "language": "java",
+    "result": "ゼロ除算の例外をキャッチし、「ゼロ除算エラーが発生しました」と表示します。"
+  },
+  {
+    "text": "import java.util.ArrayList;\nArrayList<String> list = new ArrayList<>();\nlist.add(\"りんご\");\nlist.add(\"みかん\");\nfor (String fruit : list) {\n  System.out.println(fruit);\n}",
+    "author": "Java コレクション ArrayList",
+    "tags": ["java", "コレクション", "ArrayList", "初心者"],
+    "note": "可変長のリストを簡単に使えるクラス。",
+    "favorite": false,
+    "language": "java",
+    "result": "「りんご」と「みかん」が1行ずつコンソールに表示されます。"
+  },
+  {
   "text": "<%@ page contentType=\"text/html; charset=UTF-8\" %>\n<html>\n<head><title>JSP 基本</title></head>\n<body>\n  <h1>こんにちは、JSP!</h1>\n</body>\n</html>",
   "author": "JSP 基本構造",
   "tags": ["jsp", "基本", "初心者"],
   "note": "JSPファイルの基本的なテンプレート。",
+  "result": "<h1>こんにちは、JSP!</h1>",
   "favorite": true,
   "language": "jsp"
 },
@@ -758,6 +562,7 @@
   "author": "JSP Java式出力",
   "tags": ["jsp", "java式", "出力"],
   "note": "<%= %> でJavaの値をHTMLに埋め込む。",
+  "result": "<p>現在日時: Fri May 24 12:34:56 JST 2025</p>",
   "favorite": false,
   "language": "jsp"
 },
@@ -766,6 +571,7 @@
   "author": "JSP パラメータ受け取り",
   "tags": ["jsp", "リクエスト", "パラメータ", "初心者"],
   "note": "フォームやURLのパラメータを取得して表示。",
+  "result": "<h2>こんにちは、ゲスト さん！</h2>（例：`?name=太郎` → `<h2>こんにちは、太郎 さん！</h2>`）",
   "favorite": true,
   "language": "jsp"
 },
@@ -774,6 +580,7 @@
   "author": "JSP forループ",
   "tags": ["jsp", "ループ", "初心者"],
   "note": "JSP内でJavaのループを使って繰り返し表示。",
+  "result": "<p>カウント: 0</p>\n<p>カウント: 1</p>\n<p>カウント: 2</p>\n<p>カウント: 3</p>\n<p>カウント: 4</p>",
   "favorite": false,
   "language": "jsp"
 },
@@ -782,6 +589,7 @@
   "author": "JSP リスト表示",
   "tags": ["jsp", "リスト", "ループ"],
   "note": "JavaのリストをJSPでループしてHTMLリストを生成。",
+  "result": "<ul>\n  <li>りんご</li>\n  <li>みかん</li>\n</ul>",
   "favorite": false,
   "language": "jsp"
 },
@@ -790,14 +598,43 @@
   "author": "JSP コメント構文",
   "tags": ["jsp", "コメント", "初心者"],
   "note": "HTMLの `<!-- -->` とは別だよ！JSP独自。",
+  "result": "(画面には何も表示されません)",
   "favorite": false,
   "language": "jsp"
+},
+{
+  "text": "<%@ taglib uri=\"http://java.sun.com/jsp/jstl/core\" prefix=\"c\" %>\n<c:if test=\"${param.login == 'true'}\">\n  <p>ログイン成功！</p>\n</c:if>",
+  "author": "JSP JSTL 条件分岐",
+  "tags": ["jsp", "jstl", "if", "条件"],
+  "note": "JSTLを使って簡潔に条件分岐を記述できます。",
+  "favorite": false,
+  "language": "jsp",
+  "output": "<p>ログイン成功！</p>"
+},
+{
+  "text": "<%@ taglib uri=\"http://java.sun.com/jsp/jstl/core\" prefix=\"c\" %>\n<ul>\n  <c:forEach var=\"item\" items=\"${items}\">\n    <li>${item}</li>\n  </c:forEach>\n</ul>",
+  "author": "JSP JSTL ループ",
+  "tags": ["jsp", "jstl", "ループ", "foreach"],
+  "note": "コレクションを繰り返し処理できます。",
+  "favorite": false,
+  "language": "jsp",
+  "output": "<ul>\n  <li>りんご</li>\n  <li>みかん</li>\n  <li>バナナ</li>\n</ul>"
+},
+{
+  "text": "<p>ユーザー名: ${sessionScope.username}</p>",
+  "author": "JSP セッション変数表示",
+  "tags": ["jsp", "セッション", "EL"],
+  "note": "セッションに格納された変数をELで表示。",
+  "favorite": false,
+  "language": "jsp",
+  "output": "<p>ユーザー名: Taro</p>"
 },
 {
   "text": "import java.io.*;\nimport javax.servlet.*;\nimport javax.servlet.http.*;\n\npublic class HelloServlet extends HttpServlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response)\n      throws ServletException, IOException {\n    response.setContentType(\"text/html; charset=UTF-8\");\n    PrintWriter out = response.getWriter();\n    String name = request.getParameter(\"name\");\n    if (name == null || name.isEmpty()) {\n      name = \"ゲスト\";\n    }\n    out.println(\"<h1>こんにちは、\" + name + \"さん！</h1>\");\n  }\n}",
   "author": "Servlet 基本構文",
   "tags": ["servlet", "java", "http", "初心者"],
   "note": "`doGet` でGETリクエストに応答できるよ！",
+  "result": "<h1>こんにちは、ゲストさん！</h1>（例：`?name=太郎` → `<h1>こんにちは、太郎さん！</h1>`）",
   "favorite": true,
   "language": "servlet"
 },
@@ -806,6 +643,7 @@
   "author": "Servlet POST処理",
   "tags": ["servlet", "java", "POST", "フォーム"],
   "note": "`doPost` でPOSTリクエストを処理する例。",
+  "result": "<h1>こんにちは、ゲストさん！POSTリクエストを受け取りました。</h1>（例：name=花子 → 花子さん）",
   "favorite": false,
   "language": "servlet"
 },
@@ -814,6 +652,7 @@
   "author": "web.xmlでのServletマッピング",
   "tags": ["servlet", "設定", "初心者"],
   "note": "web.xmlでServletとURLの対応を設定する。",
+  "result": "URL `/hello` にアクセスすると HelloServlet が実行されます。",
   "favorite": false,
   "language": "servlet"
 },
@@ -822,204 +661,187 @@
   "author": "Servlet セッション利用",
   "tags": ["servlet", "セッション", "初心者"],
   "note": "HttpSessionを使って訪問回数をカウント。",
-  "favorite": false,
-  "language": "servlet"
-},
-{
-  "text": "import java.io.*;\nimport javax.servlet.*;\nimport javax.servlet.http.*;\n\npublic class HelloServlet extends HttpServlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response)\n      throws ServletException, IOException {\n    response.setContentType(\"text/html; charset=UTF-8\");\n    PrintWriter out = response.getWriter();\n    String name = request.getParameter(\"name\");\n    if (name == null || name.isEmpty()) {\n      name = \"ゲスト\";\n    }\n    out.println(\"<h1>こんにちは、\" + name + \"さん</h1>\");\n  }\n}",
-  "author": "Servlet GETリクエスト処理",
-  "tags": [
-    "servlet",
-    "GET",
-    "初心者"
-  ],
-  "note": "GETリクエストでパラメータを受け取り表示します。",
-  "favorite": true,
-  "language": "servlet"
-},
-{
-  "text": "import java.io.*;\nimport javax.servlet.*;\nimport javax.servlet.http.*;\n\npublic class PostServlet extends HttpServlet {\n  protected void doPost(HttpServletRequest request, HttpServletResponse response)\n      throws ServletException, IOException {\n    request.setCharacterEncoding(\"UTF-8\");\n    String name = request.getParameter(\"name\");\n    response.setContentType(\"text/html; charset=UTF-8\");\n    PrintWriter out = response.getWriter();\n    out.println(\"<h1>POSTで受け取った名前: \" + name + \"</h1>\");\n  }\n}",
-  "author": "Servlet POSTリクエスト処理",
-  "tags": [
-    "servlet",
-    "POST",
-    "フォーム",
-    "初心者"
-  ],
-  "note": "POSTリクエストで送られたフォームデータを取得して表示。",
-  "favorite": true,
-  "language": "servlet"
-},
-{
-  "text": "import java.io.*;\nimport javax.servlet.*;\nimport javax.servlet.http.*;\n\npublic class SessionServlet extends HttpServlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response)\n      throws ServletException, IOException {\n    HttpSession session = request.getSession();\n    Integer count = (Integer) session.getAttribute(\"count\");\n    if (count == null) {\n      count = 0;\n    }\n    count++;\n    session.setAttribute(\"count\", count);\n\n    response.setContentType(\"text/html; charset=UTF-8\");\n    PrintWriter out = response.getWriter();\n    out.println(\"<p>あなたはこのページを \" + count + \" 回訪問しています。</p>\");\n  }\n}",
-  "author": "Servlet セッション管理",
-  "tags": [
-    "servlet",
-    "セッション",
-    "初心者"
-  ],
-  "note": "セッションを使って訪問回数をカウントする例。",
+  "result": "<p>あなたはこのページを 1 回訪問しています。</p>（リロードすると数が増える）",
   "favorite": false,
   "language": "servlet"
 },
 {
   "text": "import java.io.*;\nimport javax.servlet.*;\nimport javax.servlet.http.*;\n\npublic class RedirectServlet extends HttpServlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response)\n      throws ServletException, IOException {\n    response.sendRedirect(\"https://www.example.com/\");\n  }\n}",
   "author": "Servlet リダイレクト",
-  "tags": [
-    "servlet",
-    "リダイレクト",
-    "初心者"
-  ],
+  "tags": ["servlet", "リダイレクト", "初心者"],
   "note": "別のURLにリダイレクトする基本的な例。",
+  "result": "アクセスするとブラウザが https://www.example.com/ にリダイレクトされる。",
   "favorite": false,
   "language": "servlet"
 },
 {
   "text": "import java.io.*;\nimport javax.servlet.*;\nimport javax.servlet.http.*;\n\npublic class ForwardServlet extends HttpServlet {\n  protected void doGet(HttpServletRequest request, HttpServletResponse response)\n      throws ServletException, IOException {\n    RequestDispatcher dispatcher = request.getRequestDispatcher(\"/welcome.jsp\");\n    dispatcher.forward(request, response);\n  }\n}",
   "author": "Servlet フォワード",
-  "tags": [
-    "servlet",
-    "フォワード",
-    "初心者"
-  ],
+  "tags": ["servlet", "フォワード", "初心者"],
   "note": "サーブレットからJSPへ処理を転送する例。",
+  "result": "ForwardServlet にアクセスすると `/welcome.jsp` が表示される。",
   "favorite": false,
   "language": "servlet"
+},
+{
+  "text": "Cookie cookie = new Cookie(\"username\", \"Taro\");\ncookie.setMaxAge(60 * 60); // 1時間\nresponse.addCookie(cookie);",
+  "author": "Servlet Cookie追加",
+  "tags": ["servlet", "cookie", "セッション"],
+  "note": "クライアントにCookieを送信するコード。",
+  "favorite": false,
+  "language": "servlet",
+  "output": "Set-Cookie: username=Taro; Max-Age=3600"
+},
+{
+  "text": "Cookie[] cookies = request.getCookies();\nif (cookies != null) {\n  for (Cookie c : cookies) {\n    if (\"username\".equals(c.getName())) {\n      String user = c.getValue();\n      // userを使って何かする\n    }\n  }\n}",
+  "author": "Servlet Cookie取得",
+  "tags": ["servlet", "cookie", "リクエスト"],
+  "note": "クライアントから送られてきたCookieを読む。",
+  "favorite": false,
+  "language": "servlet"
+},
+{
+  "text": "response.setContentType(\"application/json; charset=UTF-8\");\nPrintWriter out = response.getWriter();\nout.print(\"{ \\\"message\\\": \\\"Hello, JSON!\\\" }\");",
+  "author": "Servlet JSONレスポンス",
+  "tags": ["servlet", "json", "api"],
+  "note": "ServletからJSONを返すAPI風のコード。",
+  "favorite": false,
+  "language": "servlet",
+  "output": "{ \"message\": \"Hello, JSON!\" }"
 },
   {
     "text": "CREATE TABLE users (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  name VARCHAR(100),\n  email VARCHAR(100),\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
     "author": "テーブル作成",
-    "tags": [
-      "sql",
-      "create",
-      "table",
-      "初心者"
-    ],
+    "tags": ["sql", "create", "table", "初心者"],
     "note": "`CREATE TABLE` は最初に覚えるべき基本。カラムの型（例: VARCHAR）や主キー設定が重要！",
     "favorite": true,
-    "language": "sql"
+    "language": "sql",
+    "result": "Query OK, table 'users' created successfully."
   },
   {
-    "text": "INSERT INTO users (name, email)\nVALUES ('Miya', 'miya@example.com');",
+    "text": "INSERT INTO users (name, email)\nVALUES ('name', 'name@example.com');",
     "author": "データ挿入",
-    "tags": [
-      "sql",
-      "insert",
-      "values",
-      "初心者"
-    ],
+    "tags": ["sql", "insert", "values", "初心者"],
     "note": "`INSERT INTO` でテーブルにデータを追加するよ。VALUES の順番に注意！",
     "favorite": false,
-    "language": "sql"
+    "language": "sql",
+    "result": "1 row inserted."
   },
   {
-    "text": "SELECT * FROM users WHERE name = 'Miya';",
+    "text": "SELECT * FROM users WHERE name = 'name';",
     "author": "データ検索",
-    "tags": [
-      "sql",
-      "select",
-      "where",
-      "初心者"
-    ],
+    "tags": ["sql", "select", "where", "初心者"],
     "note": "`SELECT *` は全件表示。WHERE を使って条件を絞れる！",
     "favorite": true,
-    "language": "sql"
+    "language": "sql",
+    "result": "| id | name | email            | created_at           |\n|----|------|-------------------|----------------------|\n| 1  | name | name@example.com  | 2025-05-22 12:34:56  |"
   },
   {
-    "text": "UPDATE users SET email = 'newmail@example.com'\nWHERE name = 'Miya';",
+    "text": "UPDATE users SET email = 'newmail@example.com'\nWHERE name = 'name';",
     "author": "データ更新",
-    "tags": [
-      "sql",
-      "update",
-      "初心者"
-    ],
-    "note": "`UPDATE` 文では `SET` で変更し、`WHERE` で対象を指定する。WHERE を忘れると全件書き換えられるよ…🥶",
+    "tags": ["sql", "update", "初心者"],
+    "note": "`UPDATE` 文では `SET` で変更し、`WHERE` で対象を指定する。WHERE を忘れると全件書き換えられるよ…",
     "favorite": false,
-    "language": "sql"
+    "language": "sql",
+    "result": "1 row updated."
   },
   {
-    "text": "DELETE FROM users WHERE name = 'Miya';",
+    "text": "DELETE FROM users WHERE name = 'name';",
     "author": "データ削除",
-    "tags": [
-      "sql",
-      "delete",
-      "初心者"
-    ],
+    "tags": ["sql", "delete", "初心者"],
     "note": "`DELETE` も `WHERE` が大事。条件なしで実行すると全削除されるから注意！",
     "favorite": true,
-    "language": "sql"
+    "language": "sql",
+    "result": "1 row deleted."
   },
   {
     "text": "SELECT COUNT(*) FROM users;",
     "author": "件数カウント",
-    "tags": [
-      "sql",
-      "count",
-      "初心者"
-    ],
+    "tags": ["sql", "count", "初心者"],
     "note": "`COUNT(*)` でレコード数を数えられる。データ確認によく使う！",
     "favorite": false,
-    "language": "sql"
+    "language": "sql",
+    "result": "| COUNT(*) |\n|----------|\n|    0     |"
   },
   {
     "text": "SELECT name FROM users ORDER BY created_at DESC LIMIT 5;",
     "author": "最新5件取得",
-    "tags": [
-      "sql",
-      "select",
-      "order",
-      "limit",
-      "初心者"
-    ],
+    "tags": ["sql", "select", "order", "limit", "初心者"],
     "note": "降順(`DESC`)でソートして `LIMIT` で件数を絞れるよ！",
     "favorite": true,
-    "language": "sql"
+    "language": "sql",
+    "result": "| name |\n|------|\n| name |"
   },
   {
     "text": "ALTER TABLE users ADD COLUMN age INT;",
     "author": "カラム追加",
-    "tags": [
-      "sql",
-      "alter",
-      "table",
-      "add",
-      "初心者"
-    ],
+    "tags": ["sql", "alter", "table", "add", "初心者"],
     "note": "`ALTER TABLE` で構造変更ができるよ。カラム追加はこれ！",
     "favorite": false,
-    "language": "sql"
+    "language": "sql",
+    "result": "Query OK, table 'users' altered successfully."
   },
   {
     "text": "DROP TABLE users;",
     "author": "テーブル削除",
-    "tags": [
-      "sql",
-      "drop",
-      "初心者",
-      "危険操作"
-    ],
+    "tags": ["sql", "drop", "初心者", "危険操作"],
     "note": "テーブルごと削除。テストデータの初期化や開発中に使うけど、実行は慎重に！",
     "favorite": false,
-    "language": "sql"
+    "language": "sql",
+    "result": "Query OK, table 'users' dropped."
   },
   {
     "text": "-- これはコメントです",
     "author": "SQL コメント構文",
-    "tags": [
-      "sql",
-      "コメント",
-      "初心者"
-    ],
+    "tags": ["sql", "コメント", "初心者"],
     "note": "`--` でその行の後ろがコメントになるよ！コードに意味を残しておこう。",
     "favorite": false,
-    "language": "sql"
+    "language": "sql",
+    "result": "（コメントのため実行されません）"
   },
   {
-    "text": "",
-    "author": "",
-    "tags": [],
-    "note": "",
+    "text": "SELECT users.name, orders.amount\nFROM users\nINNER JOIN orders ON users.id = orders.user_id;",
+    "author": "INNER JOIN（内部結合）",
+    "tags": ["sql", "join", "inner join", "初心者", "応用"],
+    "note": "`INNER JOIN` は2つのテーブルの関連データを結びつけるよ。`ON` 条件が重要！",
     "favorite": false,
-    "language": "unknown"
+    "language": "sql",
+    "result": "| name | amount |\n|------|--------|\n| name | 1200   |\n| name | 3400   |"
+  },
+  {
+    "text": "SELECT name, COUNT(*) AS count\nFROM users\nGROUP BY name;",
+    "author": "GROUP BY（グループ集計）",
+    "tags": ["sql", "group by", "集計", "初心者", "応用"],
+    "note": "`GROUP BY` で同じ値をまとめて集計できる！`COUNT`, `SUM`, `AVG` と一緒に使うのが定番。",
+    "favorite": false,
+    "language": "sql",
+    "result": "| name | count |\n|------|-------|\n| name |   2   |"
+  },
+  {
+    "text": "SELECT name, email\nFROM users\nWHERE id IN (\n  SELECT user_id FROM orders WHERE amount > 1000\n);",
+    "author": "サブクエリ（副問い合わせ）",
+    "tags": ["sql", "subquery", "where", "応用"],
+    "note": "`WHERE IN (SELECT...)` の形でサブクエリを使えば、条件を絞り込むのに便利！",
+    "favorite": false,
+    "language": "sql",
+    "result": "| name | email            |\n|------|------------------|\n| name | name@example.com |"
+  },
+  {
+    "text": "SELECT name, age,\n  CASE\n    WHEN age < 20 THEN 'teen'\n    WHEN age < 65 THEN 'adult'\n    ELSE 'senior'\n  END AS category\nFROM users;",
+    "author": "CASE文（条件分岐）",
+    "tags": ["sql", "case", "条件分岐", "応用"],
+    "note": "`CASE` を使えば `if` 的な分岐がSQLでも書けるよ。ラベル付けなどで活用！",
+    "favorite": false,
+    "language": "sql",
+    "result": "| name | age | category |\n|------|-----|----------|\n| name |  18 | teen     |\n| name |  30 | adult    |"
+  },
+  {
+    "text": "START TRANSACTION;\nUPDATE users SET email = 'rollback@example.com' WHERE id = 1;\nROLLBACK;",
+    "author": "TRANSACTION（トランザクション制御）",
+    "tags": ["sql", "transaction", "rollback", "応用", "安全対策"],
+    "note": "`START TRANSACTION` で処理をまとめて制御！`ROLLBACK` でやり直しできるのが強み。",
+    "favorite": false,
+    "language": "sql",
+    "result": "Query OK, but no changes committed (rolled back)."
   }
 ]

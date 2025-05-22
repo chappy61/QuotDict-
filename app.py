@@ -52,7 +52,8 @@ def add_quote():
         "tags": [tag.strip() for tag in request.form.get("tags", "").split(",") if tag.strip()],
         "note": request.form.get("note", ""),
         "favorite": "favorite" in request.form,
-        "language": request.form.get("language", "unknown")
+        "language": request.form.get("language", "unknown"),
+        "result": request.form.get("result", "")
     }
     quotes.append(new_quote)
     save_quotes(quotes)
