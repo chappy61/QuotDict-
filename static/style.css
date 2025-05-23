@@ -29,6 +29,47 @@ a:hover {
 a:visited { color: #bbb; }
 a:active  { color: #eee; }
 
+.to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  z-index: 999;
+}
+
+.to-top:hover {
+  opacity: 1;
+}
+
+body.light-mode .to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #e7e1c9;
+  color: #444;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  z-index: 999;
+  border-color: #bbb;
+  box-shadow: inset 0 0 4px #fff5d3;
+}
+
+body.light-mode .to-top:hover {
+    background: #fff4cc;
+}
+
+
 /* ===== ライトモード（Replicant風） ===== */
 body.light-mode {
   background: linear-gradient(to bottom right, #f8f6f1, #eae6dc);
@@ -59,7 +100,6 @@ body.light-mode a:hover {
 header {
   text-align: center;
   padding: 2rem 1rem 1rem;
-  border-bottom: 1px solid #555;
 }
 
 .nav-item {
@@ -113,8 +153,6 @@ body.light-mode .content-block {
 /* ===== 引用ブロック ===== */
 .quote-item {
   margin-bottom: none;
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed #444;
   background-color: transparent;
   color: #fff;
 }
@@ -123,8 +161,7 @@ body.light-mode .content-block {
 }
 body.light-mode .quote-item {
   background-color: rgba(255, 255, 250, 0.5);
-  border-bottom: 1px dashed rgba(120, 100, 70, 0.3);
-  padding: 1rem 0;
+  padding: 0;
   color: #222;
 }
 
@@ -141,6 +178,19 @@ body.light-mode .quote-item {
   flex-wrap: wrap;
   font-weight: bold;
   color: #888;
+}
+.edit-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.edit-button:hover {
+  background: #666;
 }
 
 /* ===== コードブロック ===== */
@@ -348,18 +398,49 @@ body.light-mode .quote-result {
 }
 
 /* ===== ラベル・タグ ===== */
-.label-tag {
-  background: #444;
+
+.lang-label {
+  background: #1a1a1a;
+  color: #ccc;
+  border: 1px solid #444;
   border-radius: 4px;
-  padding: 0.15em 0.4em;
-  margin-right: 0.4em;
-  font-size: 0.85rem;
-  color: #eee;
-  user-select: none;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  cursor: default;
+  transition: 0.3s;
+  display: inline-block;
 }
-body.light-mode .label-tag {
-  background: #ddd;
-  color: #444;
+.lang-label:hover {
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+body.light-mode .lang-label {
+  background: #f8f5eb;
+  color: #4a4a4a;
+  border-color: #bbb;
+}
+body.light-mode .lang-label:hover {
+  background: #ffe799;
+  box-shadow: 0 0 6px rgba(255, 255, 160, 0.4);
+}
+
+/* ===== 編集 ===== */
+.edit-btn {
+  display: inline-block;
+  margin-left: auto;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #888;
+  padding: 0.2rem 0.4rem;
+  float: right;
+}
+
+/* 雰囲気を追加したい場合（例：ダーク） */
+body.dark-mode .edit-btn {
+  color: #ccc;
+}
+body.light-mode .edit-btn {
+  color: #555;
 }
 
 /* ===== レスポンシブ ===== */

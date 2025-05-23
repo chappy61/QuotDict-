@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import json, os
+from flask import url_for 
 
 app = Flask(__name__)
 DATA_FILE = "data/quotes.json"
@@ -23,6 +24,11 @@ def index():
     if selected_lang:
         quotes = [q for q in quotes if q.get("language", "").lower() == selected_lang]
 
+
+    for idx, quote in enumerate(quotes):
+        quote["id"] = idx
+        
+        
     sample_quotes = {
         "python": "print('Hello, world!')",
         "html": "<!DOCTYPE html>\n<html>\n  <head>...</head>\n</html>",
@@ -59,6 +65,30 @@ def add_quote():
     save_quotes(quotes)
     return redirect("/")
 
+
+
+@app.route('/edit/<int:quote_id>', methods=['GET', 'POST'])
+def edit_quote(quote_id):
+    quotes = load_quotes()
+    if quote_id < 0 or quote_id >= len(quotes):
+        return "引用が見つかりません", 404
+
+    if request.method == 'POST':
+        # フォームの値で該当quoteを更新
+        quotes[quote_id]['text'] = request.form.get('text', '')
+        quotes[quote_id]['author'] = request.form.get('author', '')
+        quotes[quote_id]['tags'] = [tag.strip() for tag in request.form.get('tags', '').split(',') if tag.strip()]
+        quotes[quote_id]['note'] = request.form.get('note', '')
+        quotes[quote_id]['favorite'] = 'favorite' in request.form
+        quotes[quote_id]['language'] = request.form.get('language', 'unknown')
+        quotes[quote_id]['result'] = request.form.get('result', '')
+
+        save_quotes(quotes)
+        return redirect(url_for('index'))
+
+    # GETなら編集フォームを表示
+    quote = quotes[quote_id]
+    return render_template('edit.html', quote=quote, quote_id=quote_id)
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 5000))

@@ -1,0 +1,31 @@
+<form method="post" action="{{ url_for('edit_quote', quote_id=quote_id) }}">
+  <label>コードテキスト<br>
+    <textarea name="text" rows="5" cols="50">{{ quote.text }}</textarea>
+  </label><br>
+
+  <label>作者・カテゴリー<br>
+    <input type="text" name="author" value="{{ quote.author }}">
+  </label><br>
+
+  <label>タグ（カンマ区切り）<br>
+    <input type="text" name="tags" value="{{ quote.tags | join(', ') }}">
+  </label><br>
+
+  <label>メモ<br>
+    <textarea name="note" rows="3" cols="50">{{ quote.note }}</textarea>
+  </label><br>
+
+  <label>言語<br>
+    <input type="text" name="language" value="{{ quote.language }}">
+  </label><br>
+
+  <label>実行結果・解説<br>
+    <textarea name="result" rows="3" cols="50">{{ quote.result }}</textarea>
+  </label><br>
+
+  <label>お気に入り<br>
+    <input type="checkbox" name="favorite" {% if quote.favorite %}checked{% endif %}>
+  </label><br>
+
+  <button type="submit">保存</button>
+</form>
