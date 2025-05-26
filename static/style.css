@@ -593,7 +593,7 @@ body.edit-mode {
 /* 保存ボタン */
 .edit-form button[type="submit"] {
   margin-top: 2rem;
-  background: #fff7dd;
+  background: rgba(255, 255, 255, 0.6);
   color: #2a2a2a;
   font-weight: bold;
   border: none;
@@ -612,8 +612,8 @@ body.edit-mode {
 /* 削除ボタン */
 .delete-form button {
   margin-top: 2rem;
-  background: #f8d7da;
-  color: #721c24;
+  background: rgba(255, 255, 255, 0.6);
+  color: #2a2a2a;
   border: none;
   padding: 0.8rem 1rem;
   font-size: 1rem;
@@ -657,6 +657,19 @@ body.edit-mode {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #666;
+}
+
+.content-block pre {
+  max-width: 100%;
+  overflow-x: auto;    /* 横スクロールを許可 */
+  white-space: pre;    /* コードの改行はそのまま保持 */
+  padding: 0.5rem;
+  background-color: #1e1e1e; /* 好きな背景色に調整 */
+  border-radius: 0.3rem;
+}
+
+.content-block code {
+  word-break: break-word;  /* 長い単語も折り返す */
 }
 
 /* ===== レスポンシブ ===== */
