@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <title>編集 - QuotDict</title>
-    <link rel="stylesheet" href="/static/style.css" />
-  </head>
-  <body class="edit-mode">
-    <!-- 背景エフェクト -->
-	<div class="glow-container"></div>
-
-    <main class="edit-container">
-      <h1 class="edit-title">Edit Room</h1>
-      <form method="post" action="{{ url_for('edit_quote', quote_id=quote_id) }}" class="edit-form">
-        <label>コードテキスト<br>
-          <textarea name="text" rows="5">{{ quote.text }}</textarea>
-        </label><br>
-
-        <label>カテゴリー<br>
-          <input type="text" name="author" value="{{ quote.author }}">
-        </label><br>
-
-        <label>タグ<br>
-          <input type="text" name="tags" value="{{ quote.tags | join(', ') }}">
-        </label><br>
-
-        <label>メモ<br>
-          <textarea name="note" rows="3">{{ quote.note }}</textarea>
-        </label><br>
-
-        <label>言語<br>
-          <input type="text" name="language" value="{{ quote.language }}">
-        </label><br>
-
-        <label>実行結果・解説<br>
-          <textarea name="result" rows="3">{{ quote.result }}</textarea>
-        </label><br>
-
-        <label>お気に入り<br>
-          <input type="checkbox" name="favorite" {% if quote.favorite %}checked{% endif %}>
-        </label><br>
-
-        <button type="submit" class="save-btn">保存</button>
-      </form>
-    </main>
-	<script>
-	  const container = document.querySelector('.glow-container');
-	  for (let i = 0; i < 40; i++) {
-	    const glow = document.createElement('div');
-	    glow.classList.add('glow');
-	    glow.classList.add('depth-' + (Math.floor(Math.random() * 4) + 1));
-	    glow.style.left = Math.random() * 100 + 'vw';
-	    glow.style.animationDuration = 10 + Math.random() * 15 + 's';
-	    glow.style.animationDelay = Math.random() * 5 + 's';
-	    glow.style.setProperty('--wiggle', (Math.random() * 40 - 20) + 'px');
-	    container.appendChild(glow);
-	  }
-	</script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>編集 - QuotDict</title>
+		<link rel="stylesheet" href="/static/style.css" />
+	</head>
+	<body class="edit-mode">
+		<div class="glow-container"></div>
+		<div class="edit-container">
+			<h1 class="edit-title">Edit Room</h1>
+			<form method="post" action="{{ url_for('edit_quote', quote_id=quote_id) }}" class="edit-form">
+				<label>コードテキスト<br>
+					<textarea name="text" rows="5">{{ quote.text }}</textarea>
+				</label><br>
+				
+				<label>カテゴリー<br>
+					<input type="text" name="author" value="{{ quote.author }}">
+				</label><br>
+				
+				<label>タグ<br>
+					<input type="text" name="tags" value="{{ quote.tags | join(', ') }}">
+				</label><br>
+				
+				<label>メモ<br>
+					<textarea name="note" rows="3">{{ quote.note }}</textarea>
+				</label><br>
+				
+				<label>言語<br>
+					<input type="text" name="language" value="{{ quote.language }}">
+				</label><br>
+				
+				<label>実行結果・解説<br>
+					<textarea name="result" rows="3">{{ quote.result }}</textarea>
+				</label><br>
+				
+				<label>お気に入り<br>
+					<input type="checkbox" name="favorite" {% if quote.favorite %}checked{% endif %}>
+				</label><br>
+				
+				<div class="button-container">
+					<button type="submit" class="save-btn">保存</button>
+			</form>
+					<form action="{{ url_for('delete_quote', quote_id=quote.id) }}" method="POST"class="delete-form">
+						<button type="submit"class="erase-btn" onclick="return confirm('本当に削除しますか？')">削除</button>
+					</form>
+				</div>
+		</main>
+		<script>
+			const container = document.querySelector('.glow-container');
+			for (let i = 0; i < 40; i++) {
+				const glow = document.createElement('div');
+				glow.classList.add('glow');
+				glow.classList.add('depth-' + (Math.floor(Math.random() * 4) + 1));
+				glow.style.left = Math.random() * 100 + 'vw';
+				glow.style.animationDuration = 10 + Math.random() * 15 + 's';
+				glow.style.animationDelay = Math.random() * 5 + 's';
+				glow.style.setProperty('--wiggle', (Math.random() * 40 - 20) + 'px');
+				container.appendChild(glow);
+			}
+		</script>
+	</body>
 </html>

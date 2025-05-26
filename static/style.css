@@ -6,14 +6,20 @@ body {
   font-family: 'Share Tech Mono', monospace;
 }
 
-h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  color: #ccc;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.15), 0 0 8px rgba(255, 255, 255, 0.08);
+.hidden-link-wrapper {
+  display: inline; /* 親の幅を詰める */
+  padding: 0;
+  margin: 0;
 }
+
+.hidden-link {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #ccc;
+}
+
 
 a {
   color: #ccc;
@@ -578,6 +584,11 @@ body.edit-mode {
   transform: scale(1.2);
   margin-right: 0.5rem;
 }
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 28rem; /* ボタン間のスペース */
+}
 
 /* 保存ボタン */
 .edit-form button[type="submit"] {
@@ -595,7 +606,24 @@ body.edit-mode {
 }
 
 .edit-form button[type="submit"]:hover {
-  background: #e7e1c9;
+  background: rgb(137, 137, 137);
+}
+
+/* 削除ボタン */
+.delete-form button {
+  margin-top: 2rem;
+  background: #f8d7da;
+  color: #721c24;
+  border: none;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-form button:hover {
+  background: #f5c6cb;
 }
 
 /* アニメーション：静かにフェードイン */

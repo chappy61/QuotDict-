@@ -13,7 +13,11 @@
 	
 	<body>
 		<header>
-			<h1 id="top">QuotDict - 引用辞書</h1>
+			<h1 id="top">
+				<span class="hidden-link-wrapper">
+					<a href="/" class="hidden-link">QuotDict</a>
+				</span>
+			</h1>
 			<div class="search-bar">
 				<form method="GET" action="/">
 					<input type="text" name="q" placeholder="検索ワードを入力..." />
@@ -37,6 +41,7 @@
 				<div class="label">{{ language|capitalize }}</div>
 				<pre><code class="language-{{ language }}">例：{{ sample_quotes[language] }}</code></pre>
 				<a href="/?lang={{ language }}">→ {{ language|capitalize }} をもっと見る</a>
+				<div class="divider"></div>
 			</div>
 			{% endfor %}
 			{% else %}
