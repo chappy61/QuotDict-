@@ -640,6 +640,25 @@ body.edit-mode {
     transform: translateY(0);
   }
 }
+/*スクロールバー*/
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111; /* かなり暗め */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444; /* 冷たい金属的なグレー */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
 /* ===== レスポンシブ ===== */
 @media (max-width: 600px) {
   main.content-block {
