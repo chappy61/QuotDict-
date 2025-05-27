@@ -45,6 +45,10 @@
 						<button type="submit"class="erase-btn" onclick="return confirm('本当に削除しますか？')">削除</button>
 					</form>
 				</div>
+			</div>
+			<div class="back-link-container" style="margin-top: 2rem;">
+				<a href="{{ url_for('index') }}" class="back-link">← 一覧へ戻る</a>
+			</div>
 		</main>
 		<script>
 			const container = document.querySelector('.glow-container');

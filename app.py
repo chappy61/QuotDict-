@@ -1,16 +1,13 @@
-from flask import Flask, render_template, request, redirect
-import json, os
-from flask import url_for 
+from flask import Flask, render_template, request, redirect, url_for
+import os
 import sqlite3
 
-
 app = Flask(__name__)
-DATA_FILE = "data/quotes.json"
 DATABASE = 'data/quotes.db'
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
-    conn.row_factory = sqlite3.Row  # カラム名で扱えるように
+    conn.row_factory = sqlite3.Row
     return conn
 
 def load_quotes_from_db():
@@ -35,25 +32,30 @@ def load_quotes_from_db():
     return quotes
 
 
-def load_quotes():
-    if not os.path.exists(DATA_FILE):
-        return []
-    with open(DATA_FILE, encoding='utf-8') as f:
-        return json.load(f)
-
-def save_quotes(quotes):
-    with open(DATA_FILE, 'w', encoding='utf-8') as f:
-        json.dump(quotes, f, ensure_ascii=False, indent=2)
-
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
+    def safe_lower(val):
+        return val.lower() if isinstance(val, str) else ""
+
     quotes = load_quotes_from_db()
+    
     query = request.args.get("q", "").lower()
     selected_lang = request.args.get("lang", "").lower()
 
     if selected_lang:
         quotes = [q for q in quotes if q.get("language", "").lower() == selected_lang]
-        
+    print(f"フィルター後の引用数: {len(quotes)}")
+
+    if query:
+        quotes = [
+            q for q in quotes if
+            query in safe_lower(q.get("text")) or
+            query in safe_lower(q.get("author")) or
+            query in safe_lower(q.get("note")) or
+            any(query in tag.lower() for tag in q.get("tags", []))
+        ]
+    print(f"検索後の引用数: {len(quotes)}")
+
     sample_quotes = {
         "python": "print('Hello, world!')",
         "html": "<!DOCTYPE html>\n<html>\n  <head>...</head>\n</html>",
@@ -71,15 +73,14 @@ def index():
         quotes=quotes,
         current_lang=selected_lang if selected_lang else None,
         languages=list(sample_quotes.keys()),
-        sample_quotes=sample_quotes
+        sample_quotes=sample_quotes,
+        search_query=query
     )
-
 
 @app.route("/add", methods=["POST"])
 def add_quote():
     conn = get_db_connection()
     cursor = conn.cursor()
-
     cursor.execute("""
         INSERT INTO quotes (text, author, tags, note, favorite, language, result)
         VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -94,7 +95,6 @@ def add_quote():
     ))
     conn.commit()
     conn.close()
-
     return redirect("/")
 
 @app.route('/edit/<int:quote_id>', methods=['GET', 'POST'])
@@ -105,13 +105,7 @@ def edit_quote(quote_id):
     if request.method == 'POST':
         cursor.execute("""
             UPDATE quotes SET
-                text = ?,
-                author = ?,
-                tags = ?,
-                note = ?,
-                favorite = ?,
-                language = ?,
-                result = ?
+                text = ?, author = ?, tags = ?, note = ?, favorite = ?, language = ?, result = ?
             WHERE id = ?
         """, (
             request.form.get('text', ''),
@@ -127,7 +121,6 @@ def edit_quote(quote_id):
         conn.close()
         return redirect("/")
 
-    # GETなら編集フォーム表示のためにDBから引用を取る
     cursor.execute("SELECT * FROM quotes WHERE id = ?", (quote_id,))
     row = cursor.fetchone()
     conn.close()
@@ -156,9 +149,6 @@ def delete_quote(quote_id):
     conn.close()
     return redirect("/")
 
-
-
 if __name__ == '__main__':
-    import os
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)

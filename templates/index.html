@@ -20,7 +20,8 @@
 			</h1>
 			<div class="search-bar">
 				<form method="GET" action="/">
-					<input type="text" name="q" placeholder="検索ワードを入力..." />
+					<input type="text" name="q" placeholder="検索ワードを入力..." value="{{ search_query }}">
+					<button type="submit" class="search-btn">実行</button>
 				</form>
 			</div>
 			<nav>
@@ -32,65 +33,54 @@
 			</nav>
 			<button id="theme-toggle" class="theme-toggle">☽</button>
 		</header>
-		
 		<main class="content-block">
-			{% if not current_lang %}
-			<h2>言語別のコード引用一覧</h2>
-			{% for language in languages %}
-			<div class="quote-item">
-				<div class="label">{{ language|capitalize }}</div>
-				<pre><code class="language-{{ language }}">例：{{ sample_quotes[language] }}</code></pre>
-				<a href="/?lang={{ language }}">→ {{ language|capitalize }} をもっと見る</a>
-				<div class="divider"></div>
-			</div>
-			{% endfor %}
+			{% if not current_lang and not search_query %}
+			  <h2>言語別のコード引用一覧</h2>
+			  {% for language in languages %}
+			  <div class="quote-item">
+			    <div class="label">{{ language|capitalize }}</div>
+			    <pre><code class="language-{{ language }}">例：{{ sample_quotes[language] }}</code></pre>
+			    <a href="/?lang={{ language }}">→ {{ language|capitalize }} をもっと見る</a>
+			    <div class="divider"></div>
+			  </div>
+			  {% endfor %}
 			{% else %}
-			{% if quotes %}
-			{% for quote in quotes %}
-			<div class="quote-item">
-			  <pre><code>{{ quote.code }}</code></pre>
-			  <p>{{ quote.memo }}</p>
-			  <a href="{{ url_for('edit_quote', quote_id=quote['id']) }}"class="edit-btn">✎</a>
-			  <div class="quote-header">
-			    <div class="quote-meta">
-			      <span class="lang-label">{{ quote.language|capitalize }}</span>
-			      <span class="tag-list">{{ quote.tags | join(", ") }}</span>
-			    </div>
-			  </div>
-
-			  <div class="side-by-side">
-			    <div class="code-block">
-			      <pre><code class="language-{{ quote.language }}">{{ quote.text }}</code></pre>
-			    </div>
-
-			    <div class="quote-meta">
-			      {% if quote.result %}
-			      <span class="result-list">実行結果・解説</span>
-			      {% endif %}
-			    </div>
-
-			    {% if quote.result %}
-			    <div class="code-block">
-			      <pre><code class="hljs language-plaintext">{{ quote.result }}</code></pre>
-			    </div>
-			    {% endif %}
-
-			    <p><strong>カテゴリー:</strong> {{ quote.author }}</p>
-			    {% if quote.note %}
-			    <p><strong>メモ:</strong> {{ quote.note }}</p>
-			    {% endif %}
-			  </div>
-
-			  <div class="divider"></div>
-			</div>
-			{% endfor %}
-
-				{% else %}
-				<p>該当する引用はありません。</p>
-				{% endif %}
-				<p><a href="#top" class="to-top">⇑ top</a></p>
-				{% endif %}
-			</div>
+			  {% if quotes %}
+			    {% for quote in quotes %}
+			      <div class="quote-item">
+			        <a href="{{ url_for('edit_quote', quote_id=quote['id']) }}" class="edit-btn">✎</a>
+			        <div class="quote-header">
+			          <div class="quote-meta">
+			            <span class="lang-label">{{ quote.language|capitalize }}</span>
+			            <span class="tag-list">{{ quote.tags | join(", ") }}</span>
+			          </div>
+			        </div>
+			        <div class="side-by-side">
+			          <div class="code-block">
+			            <pre><code class="language-{{ quote.language }}">{{ quote.text }}</code></pre>
+			          </div>
+			          {% if quote.result %}
+			          <div class="quote-meta">
+			            <span class="result-list">実行結果・解説</span>
+			          </div>
+			          <div class="code-block">
+			            <pre><code class="hljs language-plaintext">{{ quote.result }}</code></pre>
+			          </div>
+			          {% endif %}
+			          <p><strong>カテゴリー:</strong> {{ quote.author }}</p>
+			          {% if quote.note %}
+			          <p><strong>メモ:</strong> {{ quote.note }}</p>
+			          {% endif %}
+			        </div>
+			        <div class="divider"></div>
+			      </div>
+			    {% endfor %}
+			  {% else %}
+			    <p>該当する引用はありません。</p>
+			  {% endif %}
+			  <p><a href="#top" class="to-top">⇑ top</a></p>
+			{% endif %}
+			  <p><a href="#top" class="to-top">⇑ top</a></p>
 				<h2>引用の追加</h2>
 				<form action="/add" method="post">
 					<div class="input-bar">
